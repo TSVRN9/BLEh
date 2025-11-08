@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@mnlphlp/plugin-blec':
+        specifier: ^0.8.0
+        version: 0.8.0
       '@tauri-apps/api':
         specifier: ^2
         version: 2.9.0
@@ -213,6 +216,9 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@mnlphlp/plugin-blec@0.8.0':
+    resolution: {integrity: sha512-KFcjgHkNi7poymIGbF+9VpmB2D9iEmPJKERiVaw2jDFO2dO5Om7kQ0JoYJZts59iT3qpNYUy8t5vtA6UOYcgFw==}
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
@@ -755,6 +761,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@mnlphlp/plugin-blec@0.8.0':
+    dependencies:
+      '@tauri-apps/api': 2.9.0
 
   '@polka/url@1.0.0-next.29': {}
 
