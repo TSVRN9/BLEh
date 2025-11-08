@@ -14,8 +14,11 @@
   "license": "MIT",
   "dependencies": {
     "@mnlphlp/plugin-blec": "^0.8.0",
+    "@tailwindcss/vite": "^4.1.17",
     "@tauri-apps/api": "^2",
-    "@tauri-apps/plugin-opener": "^2"
+    "@tauri-apps/plugin-opener": "^2",
+    "ol": "^10.7.0",
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.6",

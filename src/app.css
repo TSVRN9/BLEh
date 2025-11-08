@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "ol/ol.css";
+
+:root {
+    user-select: none;
+}
