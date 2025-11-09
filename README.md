@@ -1,5 +1,7 @@
 # DIY BLE (Bluetooth Low Energy) AirTag using Tauri + SvelteKit + C++/Arduino 
 
+Fall '25 HackUMass Hackathon Project!
+
 This template should help get you started developing with Tauri and SvelteKit in Vite.
 
 ## Recommended IDE Setup
