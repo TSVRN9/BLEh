@@ -37,6 +37,8 @@
     });
   });
 
+  $inspect(locations).with(console.log);
+
   $effect(() => {
     const coords = locations.map((c) => fromLonLat([c.longitude, c.latitude]));
 
@@ -54,14 +56,14 @@
     const style = new Style({
       stroke: new Stroke({
         color: "blue",
-        width: 5,
+        width: 16,
       }),
-      image: new CircleStyle({
-        radius: 8,
-        fill: new Fill({
-          color: "blue",
-        }),
-      }),
+      // image: new CircleStyle({
+      //   radius: 100,
+      //   fill: new Fill({
+      //     color: "blue",
+      //   }),
+      // }),
     });
 
     const vectorSource = new VectorSource({

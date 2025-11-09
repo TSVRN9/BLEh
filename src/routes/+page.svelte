@@ -17,6 +17,9 @@
   let devices = $state([]) as Device[];
   let locations = $state([]) as DeviceLocation[];
 
+  $inspect(devices).with(console.log);
+  $inspect(locations).with(console.log);
+
   // pairing modal
   let showpairingmodal = $state(false);
 

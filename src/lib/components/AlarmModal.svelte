@@ -48,7 +48,9 @@
 
   async function modalcomplete() {
     if (state === "sending" || state === "playing") {
-      await send(fullCharacteristic, [0], "withoutResponse", fullService).catch(console.error);
+      try {
+        await send(fullCharacteristic, [0], "withoutResponse", fullService);
+      } catch (e) {}
       await disconnect();
     }
     isActive = false;
