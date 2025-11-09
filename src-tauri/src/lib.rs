@@ -1,5 +1,6 @@
 use tauri_plugin_blec;
 use tauri_plugin_prevent_default;
+use tauri_plugin_geolocation;
 
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 #[tauri::command]
@@ -13,6 +14,7 @@ pub fn run() {
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_blec::init())
         .plugin(tauri_plugin_prevent_default::init())
+        .plugin(tauri_plugin_geolocation::init())
         .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

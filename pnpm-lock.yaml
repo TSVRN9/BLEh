@@ -17,9 +17,15 @@ importers:
       '@tauri-apps/api':
         specifier: ^2
         version: 2.9.0
+      '@tauri-apps/plugin-geolocation':
+        specifier: ^2.3.2
+        version: 2.3.2
       '@tauri-apps/plugin-opener':
         specifier: ^2
         version: 2.5.2
+      cupertino-pane:
+        specifier: ^1.5.4
+        version: 1.5.4
       ol:
         specifier: ^10.7.0
         version: 10.7.0
@@ -550,6 +556,9 @@ packages:
     engines: {node: '>= 10'}
     hasBin: true
 
+  '@tauri-apps/plugin-geolocation@2.3.2':
+    resolution: {integrity: sha512-ONCwav1monafjeO8/JdXtRlbhZ3xgAdBYxo/62qgw99u9+y6xGsohy3avZgFZsBHA0JVNe1uJnMi+vfT5ZSFUA==}
+
   '@tauri-apps/plugin-opener@2.5.2':
     resolution: {integrity: sha512-ei/yRRoCklWHImwpCcDK3VhNXx+QXM9793aQ64YxpqVF0BDuuIlXhZgiAkc15wnPVav+IbkYhmDJIv5R326Mew==}
 
@@ -586,6 +595,9 @@ packages:
   cookie@0.6.0:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
+
+  cupertino-pane@1.5.4:
+    resolution: {integrity: sha512-+b7vtlPGSOH4JaDfF/5FLDaYx3q//jksMulQu3gpXZH1G9khBLFySWOEuVaASWDJStoW8Gm/ZQlrBgLojgUA6Q==}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -1249,6 +1261,10 @@ snapshots:
       '@tauri-apps/cli-win32-ia32-msvc': 2.9.3
       '@tauri-apps/cli-win32-x64-msvc': 2.9.3
 
+  '@tauri-apps/plugin-geolocation@2.3.2':
+    dependencies:
+      '@tauri-apps/api': 2.9.0
+
   '@tauri-apps/plugin-opener@2.5.2':
     dependencies:
       '@tauri-apps/api': 2.9.0
@@ -1272,6 +1288,8 @@ snapshots:
   clsx@2.1.1: {}
 
   cookie@0.6.0: {}
+
+  cupertino-pane@1.5.4: {}
 
   debug@4.4.3:
     dependencies:
