@@ -7,10 +7,13 @@
 
   interface DevicePaneProps {
     devices: Device[];
-    onadd?: () => void;
+    onpair?: () => void;
+    ondelete?: (device: Device) => void;
+    onselect?: (device: Device) => void;
+    selectedDevice?: Device;
   }
 
-  let { devices, onadd }: DevicePaneProps = $props();
+  let { devices, onpair, ondelete, onselect, selectedDevice }: DevicePaneProps = $props();
 
   let paneDiv = $state() as HTMLDivElement;
   let pane: CupertinoPane;
@@ -43,7 +46,7 @@
     <button
       class="h-12 w-12 rounded-full bg-gray-200 flex justify-center items-center"
       aria-label="add device"
-      onclick={onadd}
+      onclick={onpair}
     >
       <PlusIcon />
     </button>
@@ -51,7 +54,16 @@
   <div class="flex flex-col pt-4 gap-2">
     {#if devices.length != 0}
       {#each devices as device}
-        <DeviceItem {device} />
+        <DeviceItem
+          {device}
+          ondelete={() => {
+            if (ondelete) ondelete(device);
+          }}
+          onselect={() => {
+            if (onselect) onselect(device);
+          }}
+          selected={device === selectedDevice}
+        />
       {/each}
     {:else}
       <div class="text-center text-gray-400">Add a new device to track!</div>

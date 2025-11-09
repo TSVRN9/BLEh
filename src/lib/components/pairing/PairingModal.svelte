@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { Device } from "$lib/types/device";
-  import { fade, scale } from "svelte/transition";
   import { type BleDevice } from "@mnlphlp/plugin-blec";
   import SelectDeviceState from "./SelectDeviceState.svelte";
   import Modal from "../Modal.svelte";
