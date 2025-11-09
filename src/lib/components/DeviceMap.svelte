@@ -3,11 +3,13 @@
     import View from 'ol/View.js';
     import OSM from 'ol/source/OSM.js';
     import TileLayer from 'ol/layer/Tile.js';
+    import { onDestroy, onMount } from 'svelte';
 
-    let mapDiv: HTMLDivElement | undefined = $state(undefined);
+    let mapDiv = $state() as HTMLDivElement;
+    let map: Map;
 
-    $effect(() => {
-        new Map({
+    onMount(() => {
+        map = new Map({
             layers: [
                 new TileLayer({source: new OSM()}),
             ],
@@ -20,6 +22,10 @@
         }); 
     });
 
+    onDestroy(() => {
+        map.setTarget(undefined);
+        map.dispose();
+    });
 </script>
 
 <div bind:this={mapDiv} class="absolute w-full h-full bg-amber-50"></div>
