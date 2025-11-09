@@ -2,8 +2,10 @@
 
 Fall '25 HackUMass Hackathon Project!
 
-This template should help get you started developing with Tauri and SvelteKit in Vite.
+![banner](https://github.com/user-attachments/assets/60a20d27-52af-4abb-88ba-d9b9e0477629)
 
-## Recommended IDE Setup
+<h1 align="center">
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Sometype+Mono&weight=900&size=40&pause=1000&color=F7BF30&center=true&vCenter=true&random=false&width=435&lines=Hi+there!🤝+;I'm++RUDRA!😃" alt="Typing SVG" /></a>
+
+</h1>
