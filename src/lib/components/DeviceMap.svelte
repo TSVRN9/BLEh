@@ -29,8 +29,8 @@
     map = new Map({
       layers: [OSM_LAYER],
       view: new View({
-        center: fromLonLat([-72.05977, 41.85843]),
-        zoom: 8,
+        center: fromLonLat([-72.528402, 42.391891]),
+        zoom: 16,
       }),
       target: mapDiv,
       controls: [],

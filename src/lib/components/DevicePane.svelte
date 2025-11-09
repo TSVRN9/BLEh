@@ -10,10 +10,11 @@
     onpair?: () => void;
     ondelete?: (device: Device) => void;
     onselect?: (device: Device) => void;
+    onalarm?: (device: Device) => void;
     selectedDevice?: Device;
   }
 
-  let { devices, onpair, ondelete, onselect, selectedDevice }: DevicePaneProps = $props();
+  let { devices, onpair, ondelete, onselect, onalarm, selectedDevice }: DevicePaneProps = $props();
 
   let paneDiv = $state() as HTMLDivElement;
   let pane: CupertinoPane;
@@ -61,6 +62,9 @@
           }}
           onselect={() => {
             if (onselect) onselect(device);
+          }}
+          onalarm={() => {
+            if (onalarm) onalarm(device);
           }}
           selected={device === selectedDevice}
         />

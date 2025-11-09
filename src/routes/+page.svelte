@@ -1,4 +1,5 @@
 <script lang="ts">
+  import AlarmModal from "$lib/components/AlarmModal.svelte";
   import ConfirmationModal from "$lib/components/ConfirmationModal.svelte";
   import DeviceMap from "$lib/components/DeviceMap.svelte";
   import DevicePane from "$lib/components/DevicePane.svelte";
@@ -19,10 +20,8 @@
   // pairing modal
   let showpairingmodal = $state(false);
 
-  function onpair() {
-    stopService();
-    clearInterval(intervalId);
-
+  async function onpair() {
+    await stopService();
     showpairingmodal = true;
   }
 
@@ -57,6 +56,19 @@
       devices.splice(devices.indexOf(todelete), 1);
     }
     showdeletemodal = false;
+  }
+
+  // alarm modal
+  let showalarmmodal = $state(false);
+
+  function onalarm() {
+    stopService();
+    showalarmmodal = true;
+  }
+
+  function alarmcomplete() {
+    showalarmmodal = false;
+    startService();
   }
 
   // passive scanning
@@ -104,20 +116,17 @@
     }, 10 * 1000);
   }
 
-  $inspect(locations).with(console.log);
-  $inspect(selectedDevice).with(console.log);
-
-  function stopService() {
+  async function stopService() {
     if (!isScanning) return;
     clearInterval(intervalId);
-    stopScan();
+    await stopScan();
   }
 </script>
 
 <div class="h-screen w-screen">
   <DeviceMap locations={locations.filter((l) => l.device === selectedDevice)} />
   <!-- <DeviceMap locations={[{longitude: 1, latitude: 1}, {longitude: 2, latitude: 2}]} /> -->
-  <DevicePane {onpair} {ondelete} {onselect} {selectedDevice} {devices} />
+  <DevicePane {onpair} {ondelete} {onselect} {onalarm} {selectedDevice} {devices} />
   {#if showpairingmodal}
     <PairingModal
       ignored={new Set(devices.map((d) => d.macAddress))}
@@ -126,5 +135,8 @@
   {/if}
   {#if showdeletemodal}
     <ConfirmationModal oncomplete={deletecomplete} />
+  {/if}
+  {#if showalarmmodal}
+    <AlarmModal device={selectedDevice as Device} oncomplete={alarmcomplete}/>
   {/if}
 </div>
